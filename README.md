@@ -96,12 +96,12 @@ year = {2019}
 }
 
 @misc{mmdetection2018,
-  author =       {Kai Chen and Jiangmiao Pang and Jiaqi Wang and Yu Xiong and Xiaoxiao Li
-                  and Shuyang Sun and Wansen Feng and Ziwei Liu and Jianping Shi and
-                  Wanli Ouyang and Chen Change Loy and Dahua Lin},
-  title =        {mmdetection},
-  howpublished = {\url{https://github.com/open-mmlab/mmdetection}},
-  year =         {2018}
+author = {Kai Chen and Jiangmiao Pang and Jiaqi Wang and Yu Xiong and Xiaoxiao Li
+          and Shuyang Sun and Wansen Feng and Ziwei Liu and Jianping Shi and
+          Wanli Ouyang and Chen Change Loy and Dahua Lin},
+title =  {mmdetection},
+howpublished = {\url{https://github.com/open-mmlab/mmdetection}},
+year = {2018}
 }
 ```
 
