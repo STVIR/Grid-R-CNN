@@ -1,6 +1,6 @@
 # Grid R-CNN
 
-An mmdetection based implementation of updated Grid R-CNN published on CVPR 2019. Original paper is [here](https://arxiv.org/abs/1811.12030), details of updates can be seen in this [technical report](Grid_RCNN_Plus.pdf).
+An mmdetection based implementation of updated Grid R-CNN published on CVPR 2019. Original paper is [here](https://arxiv.org/abs/1811.12030), details of updates can be seen in this [technical report](https://arxiv.org/abs/1906.05688).
 
 ## Installation
 
