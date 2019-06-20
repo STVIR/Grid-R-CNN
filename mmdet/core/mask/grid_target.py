@@ -14,7 +14,7 @@ def grid_target(sampling_results,cfg):
     pos_bboxes = torch.cat([res.pos_bboxes for res in sampling_results],dim=0)
     pos_gt_bboxes = torch.cat([res.pos_gt_bboxes for res in sampling_results],dim=0)
     assert(pos_bboxes.shape == pos_gt_bboxes.shape)
-
+    device = pos_bboxes.device
     #expand pos_bboxes
     x1 = pos_bboxes[:,0] - (pos_bboxes[:,2] - pos_bboxes[:,0]) / 2
     y1 = pos_bboxes[:,1] - (pos_bboxes[:,3] - pos_bboxes[:,1]) / 2
@@ -26,7 +26,7 @@ def grid_target(sampling_results,cfg):
     R = pos_bboxes.shape[0]
     G = cfg.num_grids
     mask_size = cfg.mask_size
-    targets = torch.zeros([R,G,mask_size,mask_size])
+    targets = np.zeros([R,G,mask_size,mask_size])
 
     for rix in range(R):
         for gix in range(G):
@@ -41,8 +41,9 @@ def grid_target(sampling_results,cfg):
                 for y in range(cy - radius, cy + radius + 1):
                     if x >= 0 and x < mask_size and y>=0 and y < mask_size and (x-cx)**2+(y-cy)**2<=radius**2:
                         targets[rix,gix,y,x] = 1
+    targets = torch.Tensor(targets).to(device=device)
     targets = reduce_vision(targets,mask_size)
-    targets = targets.float().cuda()
+
     return targets
 
 ### radom jittering
